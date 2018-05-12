@@ -1,0 +1,30 @@
+{
+  "name": "leding_it",
+  "version": "1.0.0",
+  "description": "First leding",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/legiorex/leding_ITDVN.git"
+  },
+  "author": "Konstantin Bstyushev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/legiorex/leding_ITDVN/issues"
+  },
+  "homepage": "https://github.com/legiorex/leding_ITDVN#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "gulp": "github:gulpjs/gulp#v4.0.0-alpha.3",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp.spritesmith": "^6.9.0",
+    "rimraf": "^2.6.2"
+  }
+}
