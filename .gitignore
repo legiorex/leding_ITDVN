@@ -1,8 +1,4 @@
-.idea/inspectionProfiles/
-.idea/leding_IT.iml
-.idea/misc.xml
-.idea/modules.xml
-.idea/workspace.xml
+.idea/
 node_modules
 npm-debug.log
 build
