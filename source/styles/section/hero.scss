@@ -1,0 +1,28 @@
+.hero{
+  min-height: 59px;
+  text-align: center;
+  padding: 180px 0;
+  color: white;
+  background: #c0c0c0 url("../images/hero-bg.jpg") center/cover no-repeat;
+
+
+  &__about{
+    font-family: $ff-main-bold;
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  &__title{
+    margin-top: 0;
+    margin-bottom: 27px;
+    font-family: $ff-main-light;
+  }
+
+  .button--text-uppercase{
+    padding: 21px 41px;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+}
