@@ -4,6 +4,10 @@
   padding-top: 7px;
   margin-right: 15px;
 
+  @media (max-width: 1000px) {
+    margin-bottom: 25px;
+  }
+
   &__link{
     display: inline-block;
     vertical-align: top;
@@ -33,5 +37,13 @@
       &:last-child:after{
         display: none;
       }
+
+    @media (max-width: 530px) {
+      display: block;
+
+      &:after{
+        display: none;
+      }
+    }
   }
 }
