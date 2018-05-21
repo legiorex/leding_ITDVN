@@ -25,10 +25,10 @@
             console.log('Заполните все поля');
             return false;
         } else if(!ITVDN.validation.isEmail(document.querySelector('[data-email]').value))  {
-            console.log('Заполните все поля');
+            console.log('Не верный email');
             return false;
         } else if(!ITVDN.validation.isNumber(document.querySelector('[data-number]').value))  {
-            console.log('Заполните все поля');
+            console.log('Не верный номер');
             return false;
         }
         return  true;
