@@ -7,7 +7,8 @@ var rimraf = require('rimraf');
 var rename = require("gulp-rename");
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
-
+var uglify = require('gulp-uglify');
+var concat = require ('gulp-concat');
 
 // ----------------Server плагин browser-sync -------------------
 gulp.task('server', function() {
@@ -42,6 +43,24 @@ gulp.task('styles:compile', function () {
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('build/css'));
 });
+
+//------------------------JS файлы--------------------------------
+
+gulp.task('js', function () {
+    return gulp.src ([
+        'source/js/init.js',
+        'source/js/validation.js',
+        'source/js/form.js',
+        'source/js/main.js'
+    ])
+        .pipe(sourcemaps.init())
+        .pipe(concat('main.min.js'))
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('build/js'));
+    
+})
+
 
 //------------------------Спрайты--------------------------------
 gulp.task('sprite', function(cb) {
@@ -78,15 +97,17 @@ gulp.task('copy:images', function () {
 gulp.task('copy', gulp.parallel('copy:fonts', 'copy:images'));
 
 
-//-------------------------Watchers Автоматический запуск задач------------
+//---Watchers (слежение за изменениями файлов) Автоматический запуск задач------------
 gulp.task('watch', function () {
     gulp.watch('source/template/**/*.pug', gulp.series('templates:compile'));
     gulp.watch('source/styles/**/*.scss', gulp.series('styles:compile'));
+    gulp.watch('source/js/**/*.js', gulp.series('js'));
+
 });
 
 //--------Задача по дефолту------------------------
 gulp.task('default', gulp.series(
     'clean',
-    gulp.parallel('templates:compile', 'styles:compile', 'sprite', 'copy'),
+    gulp.parallel('templates:compile', 'styles:compile', 'js', 'sprite', 'copy'),
     gulp.parallel('watch', 'server'),
 ));
